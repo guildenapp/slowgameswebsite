@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#111111"/>
+  <g fill="none" stroke="#2A2A2A" stroke-width="2">
+    <circle cx="400" cy="225" r="70"/>
+    <circle cx="400" cy="225" r="46"/>
+    <circle cx="400" cy="225" r="24"/>
+  </g>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" letter-spacing="8" fill="#4A4A4A">SCREENSHOT 01</text>
+</svg>
