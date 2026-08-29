@@ -3,7 +3,9 @@
 name: Fetch Roblox thumbnails
 
 on:
-  workflow_dispatch:
+  push:
+    branches: ['claude/slow-games-website-xyyyo5']
+    paths: ['.github/workflows/fetch-thumbs.yml']
 
 permissions:
   contents: write
