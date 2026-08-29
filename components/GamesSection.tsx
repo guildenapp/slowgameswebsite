@@ -53,7 +53,7 @@ function GameCard({ game, index }: { game: Game; index: number }) {
           <p className="mt-3 text-sm leading-relaxed text-muted">{game.description}</p>
 
           <div className="mt-6 flex items-center justify-between border-t border-line pt-4">
-            <span className="text-xs uppercase tracking-widest text-muted">{game.visits}</span>
+            <span className="text-xs uppercase tracking-widest text-muted">{game.meta}</span>
             <span className="text-xs uppercase tracking-widest transition-transform duration-300 group-hover:translate-x-1">
               Play →
             </span>

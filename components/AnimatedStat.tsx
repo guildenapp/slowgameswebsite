@@ -24,10 +24,13 @@ export default function AnimatedStat({
   value,
   suffix,
   label,
+  plain = false,
 }: {
   value: number;
   suffix: string;
   label: string;
+  /** Render the raw number (e.g. a year) instead of the K/M compact form */
+  plain?: boolean;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
@@ -39,15 +42,16 @@ export default function AnimatedStat({
       duration: 2,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (latest) => {
-        el.textContent = formatCompact(Math.round(latest));
+        const n = Math.round(latest);
+        el.textContent = plain ? String(n) : formatCompact(n);
       },
     });
     return () => controls.stop();
-  }, [inView, value]);
+  }, [inView, value, plain]);
 
   return (
     <div className="border border-line p-8 text-center">
-      <div className="font-display text-4xl font-bold tabular-nums tracking-wider md:text-5xl">
+      <div className="whitespace-nowrap font-display text-3xl font-bold tabular-nums tracking-wide md:text-4xl">
         <span ref={ref}>0</span>
         {suffix}
       </div>

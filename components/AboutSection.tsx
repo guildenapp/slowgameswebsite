@@ -33,8 +33,8 @@ export default function AboutSection() {
           </Reveal>
           <Reveal delay={0.2}>
             <p>
-              Millions of players have already taken the time to discover our work. The best is
-              still ahead — slowly, but surely.
+              The games we&apos;ve worked on have gathered well over a hundred million visits.
+              The best is still ahead — slowly, but surely.
             </p>
           </Reveal>
         </div>
@@ -43,7 +43,12 @@ export default function AboutSection() {
         <div className="grid content-start gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.12}>
-              <AnimatedStat value={stat.value} suffix={stat.suffix} label={stat.label} />
+              <AnimatedStat
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                plain={'plain' in stat && stat.plain}
+              />
             </Reveal>
           ))}
         </div>

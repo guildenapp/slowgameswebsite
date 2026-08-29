@@ -14,11 +14,17 @@ export const site = {
   contactEmail: 'contact@slowgames.com',
 };
 
-/** Animated stats in the "Studio" section — ← REPLACE with real numbers */
+/**
+ * Animated stats in the "Studio" section.
+ * 120M+ = Strawberry Tower (~114M) + TRIANGULATE (~6.2M) visits,
+ * per public trackers, August 2026 — Fat And Skinny not included
+ * (count unavailable). Refresh from the Roblox pages when you can.
+ * `plain: true` renders the number as-is (no K/M formatting).
+ */
 export const stats = [
-  { label: 'Total visits', value: 25_000_000, suffix: '+' },
-  { label: 'Players reached', value: 1_200_000, suffix: '+' },
+  { label: 'Combined visits', value: 120_000_000, suffix: '+' },
   { label: 'Games shipped', value: 3, suffix: '' },
+  { label: 'On Roblox since', value: 2025, suffix: '', plain: true },
 ];
 
 /** The three words of the manifesto strip — tweak freely */
