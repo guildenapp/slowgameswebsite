@@ -16,13 +16,12 @@ export const site = {
 
 /**
  * Animated stats in the "Studio" section.
- * 120M+ = Strawberry Tower (~114M) + TRIANGULATE (~6.2M) visits,
- * per public trackers, August 2026 — Fat And Skinny not included
- * (count unavailable). Refresh from the Roblox pages when you can.
+ * 219M+ = Strawberry Tower (126.8M) + Fat And Skinny (86.3M)
+ * + TRIANGULATE (6.2M) visits, official Roblox API, August 2026.
  * `plain: true` renders the number as-is (no K/M formatting).
  */
 export const stats = [
-  { label: 'Combined visits', value: 120_000_000, suffix: '+' },
+  { label: 'Combined visits', value: 219_000_000, suffix: '+' },
   { label: 'Games shipped', value: 3, suffix: '' },
   { label: 'On Roblox since', value: 2025, suffix: '', plain: true },
 ];

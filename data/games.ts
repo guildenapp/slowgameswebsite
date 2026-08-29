@@ -5,12 +5,11 @@
  * Each entry is a card in the "Our Work" section.
  * - `role`: 'created' (made by Slow Games) or 'contributed'
  *   (we worked on it). ← adjust per game.
- * - `image`: replace the SVG covers with the real Roblox
- *   thumbnails (drop them in /public/games, update the path).
+ * - `image`: official Roblox thumbnail in /public/games.
  * - `meta`: the stat line on the card, shown as-is.
  *
- * Visit counts sourced from public trackers (Rolimon's),
- * August 2026 — refresh them from the Roblox game pages.
+ * Thumbnails and visit counts pulled from the official Roblox
+ * APIs (games.roblox.com / thumbnails.roblox.com), August 2026.
  */
 
 export type GameRole = 'created' | 'contributed';
@@ -35,9 +34,9 @@ export const games: Game[] = [
     title: 'Strawberry Tower',
     description:
       'A fun and easy tower obby with colorful stages. Climb solo or with friends and reach the top of the tower.',
-    image: '/games/strawberry-tower.svg', // ← REPLACE with the real thumbnail
+    image: '/games/strawberry-tower.png', // official Roblox thumbnail
     role: 'contributed', // ← set to 'created' if this is your own game
-    meta: '114M+ visits',
+    meta: '126M+ visits',
     url: 'https://www.roblox.com/games/139733286702777/Strawberry-Tower',
   },
   {
@@ -45,9 +44,9 @@ export const games: Game[] = [
     title: 'Fat And Skinny',
     description:
       'A 2-player obby: one of you is fat, the other is skinny. Team up, pass the tracks and reach the treasure together.',
-    image: '/games/fat-and-skinny.svg', // ← REPLACE with the real thumbnail
+    image: '/games/fat-and-skinny.png', // official Roblox thumbnail
     role: 'contributed', // ← set to 'created' if this is your own game
-    meta: '2-player co-op', // ← put the real visit count here when you have it
+    meta: '86M+ visits',
     url: 'https://www.roblox.com/games/134989184196699/Fat-And-Skinny',
   },
   {
@@ -55,7 +54,7 @@ export const games: Game[] = [
     title: 'TRIANGULATE',
     description:
       'A physics-based sandbox: build crazy contraptions to produce enough triangles and meet the daily quota.',
-    image: '/games/triangulate.svg', // ← REPLACE with the real thumbnail
+    image: '/games/triangulate.png', // official Roblox thumbnail
     role: 'contributed', // ← set to 'created' if this is your own game
     meta: '6.2M+ visits',
     url: 'https://www.roblox.com/games/110413938071189/TRIANGULATE',
