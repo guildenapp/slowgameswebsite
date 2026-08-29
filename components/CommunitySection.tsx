@@ -11,13 +11,19 @@ const icons: Record<string, () => JSX.Element> = {
 };
 
 /**
- * Section "Communauté" — cartes de liens (Discord, X, YouTube, Roblox).
- * Les URLs sont dans data/site.ts.
+ * "Community" — link cards (Discord, X, YouTube, Roblox).
+ * Cards fully invert (white on black → black on white) on hover.
+ * URLs live in data/site.ts.
  */
 export default function CommunitySection() {
   return (
     <section id="community" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-28 md:px-8 md:py-40">
-      <SectionHeading number="03" title="Communauté" />
+      <SectionHeading
+        number="03"
+        title="Community"
+        kicker="Where the herd hangs out"
+        ghost="Join us"
+      />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {socials.map((social, i) => {
@@ -28,15 +34,17 @@ export default function CommunitySection() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-4 border border-line p-10 text-center transition-colors duration-400 hover:border-paper/40 hover:bg-paper/[0.02]"
+                className="group flex flex-col items-center gap-4 border border-line p-10 text-center transition-all duration-400 hover:border-paper hover:bg-paper"
               >
-                <span className="text-muted transition-colors duration-400 group-hover:text-paper">
+                <span className="text-muted transition-colors duration-400 group-hover:text-ink">
                   <Icon />
                 </span>
-                <span className="font-display text-sm font-bold uppercase tracking-widest">
+                <span className="font-display text-sm font-bold uppercase tracking-widest transition-colors duration-400 group-hover:text-ink">
                   {social.label}
                 </span>
-                <span className="text-xs text-muted">{social.handle}</span>
+                <span className="text-xs text-muted transition-colors duration-400 group-hover:text-ink/60">
+                  {social.handle}
+                </span>
               </a>
             </Reveal>
           );

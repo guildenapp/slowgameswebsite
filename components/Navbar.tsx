@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 
 const links = [
-  { href: '#games', label: 'Nos jeux' },
-  { href: '#about', label: 'À propos' },
-  { href: '#community', label: 'Communauté' },
+  { href: '#games', label: 'Our Work' },
+  { href: '#about', label: 'Studio' },
+  { href: '#community', label: 'Community' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -44,9 +44,9 @@ export default function Navbar() {
     >
       <nav
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8"
-        aria-label="Navigation principale"
+        aria-label="Main navigation"
       >
-        <a href="#top" className="flex items-center gap-3" aria-label="Slow Games — retour en haut">
+        <a href="#top" className="flex items-center gap-3" aria-label="Slow Games — back to top">
           <Image
             src="/logo-mark.png"
             alt=""
@@ -79,7 +79,7 @@ export default function Navbar() {
           className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-label={open ? 'Close menu' : 'Open menu'}
         >
           <motion.span
             className="block h-px w-6 bg-paper"

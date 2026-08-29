@@ -4,9 +4,9 @@ import { site } from '@/data/site';
 import './globals.css';
 
 /**
- * Typographies :
- * - Space Grotesk : sans-serif géométrique pour les titres (uppercase, tracking large)
- * - Inter : corps de texte neutre
+ * Typography:
+ * - Space Grotesk: geometric sans for display (uppercase, wide tracking)
+ * - Inter: neutral body text
  */
 const display = Space_Grotesk({
   subsets: ['latin'],
@@ -21,8 +21,8 @@ const body = Inter({
 });
 
 /**
- * SEO — métadonnées globales du site.
- * Pense à mettre à jour `site.url` dans data/site.ts avec ton domaine réel.
+ * SEO — global site metadata.
+ * Remember to update `site.url` in data/site.ts with your real domain.
  */
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     template: '%s — Slow Games',
   },
   description:
-    'Slow Games est un studio de jeux Roblox indépendant. Great games take time. Découvrez nos expériences, rejoignez la communauté et contactez-nous pour partenariats & publishing.',
+    'Slow Games is an independent Roblox game studio. Great games take time. Explore the games we build and contribute to, join the community, and reach out for partnerships & publishing.',
   keywords: [
     'Roblox game studio',
     'Roblox',
     'Slow Games',
-    'studio de jeux',
-    'jeux Roblox',
+    'game studio',
+    'Roblox games',
     'game development',
     'Roblox experiences',
   ],
@@ -46,26 +46,24 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: 'Slow Games',
     title: 'Slow Games — Roblox Game Studio',
-    description:
-      'Studio de jeux Roblox indépendant. Great games take time.',
+    description: 'Independent Roblox game studio. Great games take time.',
     images: [
       {
-        // ← REMPLACER : ajoute une image /public/og.png (1200×630) pour un meilleur rendu
+        // ← REPLACE: add a /public/og.png (1200×630) for a nicer share card
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Slow Games — logo escargot',
+        alt: 'Slow Games — snail logo',
       },
     ],
-    locale: 'fr_FR',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Slow Games — Roblox Game Studio',
-    description:
-      'Studio de jeux Roblox indépendant. Great games take time.',
+    description: 'Independent Roblox game studio. Great games take time.',
     images: ['/logo.png'],
-    creator: '@SlowGames', // ← REMPLACER par ton handle X/Twitter
+    creator: '@SlowGames', // ← REPLACE with your X/Twitter handle
   },
   robots: {
     index: true,
@@ -83,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="grain">{children}</body>
     </html>
   );

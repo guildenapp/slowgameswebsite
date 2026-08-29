@@ -1,50 +1,53 @@
 /**
  * ============================================================
- * CONFIGURATION DU SITE — DONNÉES À MODIFIER
+ * SITE CONFIG — EDIT ME
  * ============================================================
- * Liens réseaux, stats du studio, email de contact, URL du site.
+ * Social links, studio stats, contact email, production URL.
  */
 
 export const site = {
   name: 'Slow Games',
   tagline: 'Great games take time.',
-  /** ← REMPLACER par l'URL de production (utilisée pour le SEO / Open Graph / sitemap) */
+  /** ← REPLACE with your production URL (used for SEO / Open Graph / sitemap) */
   url: 'https://slowgames.com',
-  /** ← REMPLACER par ton email business */
+  /** ← REPLACE with your business email */
   contactEmail: 'contact@slowgames.com',
 };
 
-/** Stats affichées (et animées) dans la section "À propos" */
+/** Animated stats in the "Studio" section — ← REPLACE with real numbers */
 export const stats = [
-  { label: 'Visites totales', value: 25_000_000, suffix: '+' }, // ← REMPLACER
-  { label: 'Joueurs', value: 1_200_000, suffix: '+' }, // ← REMPLACER
-  { label: 'Jeux publiés', value: 2, suffix: '' }, // ← REMPLACER
+  { label: 'Total visits', value: 25_000_000, suffix: '+' },
+  { label: 'Players reached', value: 1_200_000, suffix: '+' },
+  { label: 'Games shipped', value: 3, suffix: '' },
 ];
 
-/** Cartes de la section "Communauté" — remplace les URLs par les tiennes */
+/** The three words of the manifesto strip — tweak freely */
+export const manifesto = ['Slow', 'Steady', 'Shipped'];
+
+/** "Community" cards — ← REPLACE the URLs with yours */
 export const socials = [
   {
     id: 'discord',
     label: 'Discord',
-    handle: 'Rejoins le serveur',
-    url: 'https://discord.gg/xxxxxxx', // ← REMPLACER
+    handle: 'Join the server',
+    url: 'https://discord.gg/xxxxxxx', // ← REPLACE
   },
   {
     id: 'twitter',
     label: 'X / Twitter',
     handle: '@SlowGames',
-    url: 'https://x.com/slowgames', // ← REMPLACER
+    url: 'https://x.com/slowgames', // ← REPLACE
   },
   {
     id: 'youtube',
     label: 'YouTube',
     handle: '@SlowGames',
-    url: 'https://youtube.com/@slowgames', // ← REMPLACER
+    url: 'https://youtube.com/@slowgames', // ← REPLACE
   },
   {
     id: 'roblox',
-    label: 'Groupe Roblox',
+    label: 'Roblox Group',
     handle: 'Slow Games',
-    url: 'https://www.roblox.com/groups/0000000', // ← REMPLACER
+    url: 'https://www.roblox.com/groups/0000000', // ← REPLACE
   },
 ] as const;

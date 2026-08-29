@@ -2,25 +2,35 @@ import Image from 'next/image';
 import { site, socials } from '@/data/site';
 
 const navLinks = [
-  { href: '#games', label: 'Nos jeux' },
-  { href: '#about', label: 'À propos' },
-  { href: '#community', label: 'Communauté' },
+  { href: '#games', label: 'Our Work' },
+  { href: '#about', label: 'Studio' },
+  { href: '#community', label: 'Community' },
   { href: '#contact', label: 'Contact' },
 ];
 
 /**
- * Footer : logo, navigation, réseaux, copyright.
+ * Footer: giant outlined wordmark, navigation, socials, copyright.
  */
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line">
+    <footer className="overflow-hidden border-t border-line">
+      {/* Wordmark géant en filigrane */}
+      <div aria-hidden="true" className="select-none px-5 pt-14 md:px-8">
+        <p
+          className="whitespace-nowrap text-center font-display text-[13.5vw] font-bold uppercase leading-none tracking-tight text-transparent"
+          style={{ WebkitTextStroke: '1px #2A2A2A' }}
+        >
+          Slow Games
+        </p>
+      </div>
+
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           {/* Logo + baseline */}
           <div className="flex flex-col gap-4">
-            <a href="#top" className="flex items-center gap-3" aria-label="Slow Games — retour en haut">
+            <a href="#top" className="flex items-center gap-3" aria-label="Slow Games — back to top">
               <Image
                 src="/logo-mark.png"
                 alt=""
@@ -36,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <nav aria-label="Navigation du pied de page">
+          <nav aria-label="Footer navigation">
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -51,7 +61,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Réseaux */}
+          {/* Socials */}
           <ul className="flex flex-col gap-3">
             {socials.map((social) => (
               <li key={social.id}>
@@ -66,10 +76,18 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+
+          {/* Back to top */}
+          <a
+            href="#top"
+            className="self-start border border-line px-5 py-3 text-xs uppercase tracking-widest text-muted transition-colors duration-400 hover:border-paper hover:text-paper"
+          >
+            Back to top ↑
+          </a>
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 text-[11px] uppercase tracking-widest text-muted md:flex-row">
-          <span>© {year} Slow Games. Tous droits réservés.</span>
+          <span>© {year} Slow Games. All rights reserved.</span>
           <span>Great games take time.</span>
         </div>
       </div>

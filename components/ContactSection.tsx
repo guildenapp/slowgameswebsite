@@ -6,10 +6,10 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 
 /**
- * Section "Contact / Business" — formulaire statique.
- * Le site étant 100% statique, l'envoi ouvre le client mail (mailto)
- * avec le message pré-rempli vers site.contactEmail.
- * Si tu préfères un vrai backend plus tard : Formspree, Resend, etc.
+ * "Contact / Business" — static-friendly form.
+ * The site is fully static, so submitting opens the visitor's mail
+ * client (mailto) pre-filled to site.contactEmail.
+ * Want a real backend later? Formspree, Resend, etc.
  */
 export default function ContactSection() {
   const [name, setName] = useState('');
@@ -18,8 +18,8 @@ export default function ContactSection() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`[Slow Games] Message de ${name}`);
-    const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\n${message}`);
+    const subject = encodeURIComponent(`[Slow Games] Message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:${site.contactEmail}?subject=${subject}&body=${body}`;
   };
 
@@ -28,20 +28,23 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-28 md:px-8 md:py-40">
-      <SectionHeading number="04" title="Contact" />
+      <SectionHeading
+        number="04"
+        title="Contact"
+        kicker="Partnerships & publishing"
+        ghost="Hello"
+      />
 
       <div className="grid gap-16 lg:grid-cols-2">
         <Reveal>
-          <p className="text-xs uppercase tracking-widest2 text-muted">
-            Partenariats &amp; publishing
-          </p>
-          <h3 className="mt-4 font-display text-2xl font-bold uppercase leading-snug tracking-widest md:text-3xl">
-            Travaillons ensemble.
-            <br />À notre rythme.
+          <h3 className="font-display text-2xl font-bold uppercase leading-snug tracking-widest md:text-3xl">
+            Let&apos;s work together.
+            <br />
+            At our own pace.
           </h3>
           <p className="mt-6 max-w-md leading-relaxed text-muted">
-            Une proposition de partenariat, une question business, une idée de collaboration ?
-            Écrivez-nous — on répond toujours, jamais dans la précipitation.
+            A partnership proposal, a business question, a collaboration idea? Write to us — we
+            always answer, never in a hurry.
           </p>
           <a
             href={`mailto:${site.contactEmail}`}
@@ -52,10 +55,10 @@ export default function ContactSection() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <form onSubmit={handleSubmit} className="space-y-4" aria-label="Formulaire de contact">
+          <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
             <div>
               <label htmlFor="contact-name" className="sr-only">
-                Nom
+                Name
               </label>
               <input
                 id="contact-name"
@@ -63,7 +66,7 @@ export default function ContactSection() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Votre nom"
+                placeholder="Your name"
                 className={inputClass}
               />
             </div>
@@ -77,7 +80,7 @@ export default function ContactSection() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Votre email"
+                placeholder="Your email"
                 className={inputClass}
               />
             </div>
@@ -91,7 +94,7 @@ export default function ContactSection() {
                 rows={5}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Votre message"
+                placeholder="Your message"
                 className={`${inputClass} resize-none`}
               />
             </div>
@@ -99,7 +102,7 @@ export default function ContactSection() {
               type="submit"
               className="w-full border border-paper bg-paper px-10 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-colors duration-400 hover:bg-transparent hover:text-paper sm:w-auto"
             >
-              Envoyer le message
+              Send message
             </button>
           </form>
         </Reveal>

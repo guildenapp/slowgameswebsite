@@ -1,57 +1,60 @@
 /**
  * ============================================================
- * NOS JEUX — DONNÉES À MODIFIER
+ * GAMES — EDIT ME
  * ============================================================
- * Chaque entrée = une carte dans la section "Nos jeux".
- * - Remplace `image` par tes screenshots (place-les dans /public,
- *   ex: /public/games/mon-jeu.png → image: '/games/mon-jeu.png').
- * - `status` : 'live' ou 'dev' (affiche "Live" ou "En développement").
- * - `players` : texte libre (ex: "12.4K joueurs", "—").
- * - `url` : lien vers l'expérience Roblox.
+ * Each entry is a card in the "Our Work" section.
+ * - `role`: 'created' (made by Slow Games) or 'contributed'
+ *   (we worked on it). ← adjust per game.
+ * - `image`: replace the SVG covers with real screenshots
+ *   (drop them in /public/games and update the path).
+ * - `visits`: shown as-is on the card. ← replace with real numbers.
  */
 
-export type GameStatus = 'live' | 'dev';
+export type GameRole = 'created' | 'contributed';
 
 export interface Game {
-  /** Identifiant unique (utilisé comme clé React) */
+  /** Unique id (React key) */
   id: string;
   title: string;
   description: string;
-  /** Chemin vers l'image dans /public */
+  /** Path to the cover image inside /public */
   image: string;
-  status: GameStatus;
-  /** Nombre de joueurs affiché tel quel sur la carte */
-  players: string;
-  /** Lien vers l'expérience Roblox */
+  role: GameRole;
+  /** Display string, e.g. "128M visits" — shown as-is */
+  visits: string;
+  /** Link to the Roblox experience */
   url: string;
 }
 
 export const games: Game[] = [
   {
-    id: 'game-1',
-    title: 'Snail Tycoon', // ← REMPLACER : titre de ton jeu
-    description: 'Construis l’empire d’escargots le plus lent — et le plus rentable — de Roblox.',
-    image: '/games/placeholder-1.svg', // ← REMPLACER par ton screenshot
-    status: 'live',
-    players: '12.4K joueurs',
-    url: 'https://www.roblox.com/games/0000000000', // ← REMPLACER par le lien Roblox
+    id: 'strawberry-tower',
+    title: 'Strawberry Tower',
+    description:
+      'Climb a tower of berries, one careful jump at a time. Patience is the real skill.',
+    image: '/games/strawberry-tower.svg', // ← REPLACE with a real screenshot
+    role: 'contributed', // ← set to 'created' if this is your own game
+    visits: '— visits', // ← REPLACE, e.g. '128M visits'
+    url: 'https://www.roblox.com/games/139733286702777/Strawberry-Tower',
   },
   {
-    id: 'game-2',
-    title: 'Slow Race Simulator', // ← REMPLACER
-    description: 'La course où arriver dernier est un art. Améliore ton escargot, savoure le trajet.',
-    image: '/games/placeholder-2.svg', // ← REMPLACER
-    status: 'live',
-    players: '8.1K joueurs',
-    url: 'https://www.roblox.com/games/0000000000', // ← REMPLACER
+    id: 'fat-and-skinny',
+    title: 'Fat And Skinny',
+    description:
+      'Two shapes, one duo, endless trouble. A chaotic co-op about being very different.',
+    image: '/games/fat-and-skinny.svg', // ← REPLACE with a real screenshot
+    role: 'contributed', // ← set to 'created' if this is your own game
+    visits: '— visits', // ← REPLACE
+    url: 'https://www.roblox.com/games/134989184196699/Fat-And-Skinny',
   },
   {
-    id: 'game-3',
-    title: 'Projet S', // ← REMPLACER
-    description: 'Notre prochain monde. On prend notre temps — il sera prêt quand il sera prêt.',
-    image: '/games/placeholder-3.svg', // ← REMPLACER
-    status: 'dev',
-    players: '—',
-    url: 'https://www.roblox.com/games/0000000000', // ← REMPLACER
+    id: 'triangulate',
+    title: 'TRIANGULATE',
+    description:
+      'Sharp minds only. A geometric challenge where every angle counts.',
+    image: '/games/triangulate.svg', // ← REPLACE with a real screenshot
+    role: 'contributed', // ← set to 'created' if this is your own game
+    visits: '— visits', // ← REPLACE
+    url: 'https://www.roblox.com/games/110413938071189/TRIANGULATE',
   },
 ];
